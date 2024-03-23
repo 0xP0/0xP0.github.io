@@ -99,7 +99,6 @@
             .then(data => {
                 const countElement = document.getElementById('count');
                 const newCount = data.count;
-                console.log(newCount);
                 // 更新计数器前检查数字是否有变化
                 if (newCount !== previousCount) {
                     countElement.classList.remove('counter-update'); // 重置动画
