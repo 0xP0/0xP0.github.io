@@ -21,22 +21,22 @@
           padding: 5px 10px;
           margin-left: 10px;
           border-radius: 5px;
+          display: inline-block;
           transition: transform 0.3s ease-in-out;
       }
   
       .counter-update {
-          animation: pulse 1s;
+          animation: pop 0.5s ease-in-out;
       }
   
-      @keyframes pulse {
-          0% {
+      @keyframes pop {
+          0%, 100% {
               transform: scale(1);
+              opacity: 1;
           }
           50% {
-              transform: scale(1.1);
-          }
-          100% {
-              transform: scale(1);
+              transform: scale(1.5);
+              opacity: 0.5;
           }
       }
   
@@ -46,7 +46,7 @@
 <body>
 
 <div class="container">
-    <h4>日志<span id="logCount" class="counter">0</span></h4>
+    <h4>日志<span id="count" class="counter">0</span></h4>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
@@ -99,7 +99,7 @@
             .then(data => {
                 const countElement = document.getElementById('count');
                 const newCount = data.count;
-
+                console.log(newCount);
                 // 更新计数器前检查数字是否有变化
                 if (newCount !== previousCount) {
                     countElement.classList.remove('counter-update'); // 重置动画
@@ -117,7 +117,7 @@
     // 页面加载时开始定时刷新计数器
     document.addEventListener('DOMContentLoaded', () => {
         fetchTotalRecordsAndAnimate();
-        setInterval(fetchTotalRecordsAndAnimate, 5000); // 每5秒刷新一次
+        setInterval(fetchTotalRecordsAndAnimate, 3000); // 每3秒刷新一次
     });
 
 
