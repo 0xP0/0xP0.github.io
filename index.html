@@ -189,14 +189,14 @@
       }
 
       // 下一页
-      pagination.appendChild(createPageItem(Math.min(currentPage + 1, totalPages - 1), '&raquo;'));
+      pagination.appendChild(createPageItem(Math.min(currentPage + 1, totalPages), '&raquo;'));
 
       // 尾页
-      pagination.appendChild(createPageItem(totalPages - 1, '尾页'));
+      pagination.appendChild(createPageItem(totalPages , '尾页'));
 
       // 禁用首尾页按钮时的条件
       pagination.children[0].classList.toggle('disabled', currentPage === 0);
-      pagination.lastChild.classList.toggle('disabled', currentPage === totalPages - 1);
+      pagination.lastChild.classList.toggle('disabled', currentPage === totalPages);
   }
 
 
