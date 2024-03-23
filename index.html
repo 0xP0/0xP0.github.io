@@ -94,7 +94,7 @@
 
 
     function fetchAndDisplayLogs(page) {
-        fetch(`//frp.sjtuee.net/handler/logs?page=${page}&size=${recordsPerPage}&order=ASC`)
+        fetch(`//frp.sjtuee.net/handler/logs?page=${page}&size=${recordsPerPage}&order=DESC`)
             .then(response => response.json())
             .then(data => {
                 const logsTableBody = document.getElementById('logsTableBody');
