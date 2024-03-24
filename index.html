@@ -75,8 +75,8 @@
                 <tr>
                     <th>ID</th>
                     <th>OP</th>
-                    <th>创建时间</th>
-                    <th>内容</th>
+                    <th>Timestamp</th>
+                    <th>Content</th>
                 </tr>
             </thead>
             <tbody id="logsTableBody">
@@ -197,7 +197,7 @@
       };
 
       // 首页
-      pagination.appendChild(createPageItem(0, '首页'));
+      pagination.appendChild(createPageItem(0, 'First'));
 
       // 上一页
       pagination.appendChild(createPageItem(Math.max(currentPage - 1, 0), '&laquo;'));
@@ -223,7 +223,7 @@
       pagination.appendChild(createPageItem(Math.min(currentPage + 1, totalPages -1), '&raquo;'));
 
       // 尾页
-      pagination.appendChild(createPageItem(totalPages -1, '尾页'));
+      pagination.appendChild(createPageItem(totalPages -1, 'Last'));
 
       // 禁用首尾页按钮时的条件
       pagination.children[0].classList.toggle('disabled', currentPage === 0);
