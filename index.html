@@ -131,6 +131,9 @@
 					// 如果计数器数字有变化，刷新当前页面和当前页的数据
                     fetchAndDisplayLogs(currentPage);
 
+					//更新页面
+					updatePagination();
+
                     previousCount = newCount; // 更新上一个计数值
                 }
             })
