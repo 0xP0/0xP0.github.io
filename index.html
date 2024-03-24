@@ -7,6 +7,10 @@
     <!-- 引入 Bootstrap v3 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
+		#logo {
+			height: 50px; /* 根据需要调整高度 */
+			vertical-align: middle; /* 如果需要的话，调整垂直对齐 */
+		}
         .pagination-container {
             margin-top: 20px;
             display: flex;
@@ -46,7 +50,7 @@
 <body>
 
 <div class="container">
-    <h4>日志<span id="count" class="counter">0</span></h4>
+    <h4><img src="images/logo.webp" alt="日志" id="logo" /><span id="count" class="counter">0</span></h4>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
