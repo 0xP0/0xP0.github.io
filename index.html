@@ -128,12 +128,14 @@
                     countElement.classList.add('counter-update'); // 添加动画效果
                     countElement.textContent = newCount; // 更新计数器数字
 
+					const totalRecords = data.count;
+					totalPages = Math.ceil(totalRecords / recordsPerPage);
+					fetchAndDisplayLogs(currentPage);
+					updatePagination();
+
 					// 如果计数器数字有变化，刷新当前页面和当前页的数据
                     fetchAndDisplayLogs(currentPage);
 
-					//更新页面
-					fetchTotalRecordsAndLogs();
-					updatePagination();
 
                     previousCount = newCount; // 更新上一个计数值
                 }
